@@ -26,8 +26,7 @@ class TenantRequest extends FormRequest
         $rules = [
             'cnpj' => 'required|unique:tenants,cnpj,'.$this->segment(2).',id|min:3|max:50',
             'company' => 'required|min:3|max:50',
-            'email' => 'required',
-            'logo' => 'required',
+            'email' => 'required'
         ];
 
         if ($this->segment(2)) {

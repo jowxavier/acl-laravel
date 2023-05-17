@@ -56,8 +56,8 @@ class TenantController extends Controller
     public function store(TenantRequest $request)
     {
         try {
-            $this->model->create($request->all());
-            return redirect()->route('admin.tenants.index')->with('success', 'Categoria inserida com sucesso');
+            $this->model->myTenant()->create($request->all());
+            return redirect()->route('admin.tenants.index')->with('success', 'Tenant inserido com sucesso');
         } catch (\Exception $e) {
             throw new CustomStoreException($e->getMessage());
         }

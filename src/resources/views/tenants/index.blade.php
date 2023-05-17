@@ -32,7 +32,7 @@
                 <tbody>
                     @foreach ($tenants as $tenant)
                         <tr>
-                            <td><img src="{{ $tenant->logo }}" alt="{{ $tenant->company }}" style="max-width: 90px;"></td>
+                            <td>@if($tenant->logo)<img src="{{ $tenant->logo }}" alt="{{ $tenant->company }}" style="max-width: 90px;">@endif</td>
                             <td>{{ $tenant->company }}</td>
                             <td>
                                 <a href="{{ route('admin.tenants.show', $tenant->id) }}" title="Detalhes" class="btn btn-light"><i class="fas fa-fw fa-search"></i></a>

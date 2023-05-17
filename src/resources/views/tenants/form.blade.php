@@ -4,16 +4,19 @@
 </div>
 <div class="form-group">
     <label>CNPJ:</label>
-    <input type="text" name="cnpj" class="form-control" placeholder="Preço" value="{{ $tenant->cnpj ?? old('cnpj') }}">
+    <input type="text" name="cnpj" class="form-control" placeholder="CNPJ" value="{{ $tenant->cnpj ?? old('cnpj') }}">
 </div>
 <div class="form-group">
     <label>Email:</label>
     <input type="text" name="email" class="form-control" placeholder="Email" value="{{ $tenant->email ?? old('email') }}">
 </div>
-<div class="form-group">
-    <label>Logo:</label>
-    <input type="file" name="logo" class="form-control">
-</div>
+
+@if(isset($tenant))
+    <div class="form-group">
+        <label>Logo:</label>
+        <input type="file" name="logo" class="form-control">
+    </div>
+@endif
 
 
 @if(isset($tenant->logo))
