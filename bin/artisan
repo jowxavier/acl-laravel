@@ -1,0 +1,5 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+params=$@
+docker exec -it acl-app bash -c "php artisan $params"
